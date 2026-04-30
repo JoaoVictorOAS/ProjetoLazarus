@@ -38,7 +38,7 @@ begin
     FConn.DatabaseName := Ini.ReadString('database', 'database', 'agile_db');
     FConn.UserName     := Ini.ReadString('database', 'user',     'agile');
     FConn.Password     := Ini.ReadString('database', 'password', '');
-    FConn.Port         := Ini.ReadInteger('database','port',      5432);
+    FConn.Params.Values['port'] := Ini.ReadString('database', 'port', '5432');
     FConn.Open;
   finally
     Ini.Free;
