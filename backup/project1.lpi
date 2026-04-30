@@ -26,6 +26,9 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="SQLDBLaz"/>
+      </Item>
+      <Item>
         <PackageName Value="LCL"/>
       </Item>
     </RequiredPackages>
@@ -41,6 +44,11 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
       </Unit>
+      <Unit>
+        <Filename Value="src\utils\UDBConnection.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UDBConnection"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -51,9 +59,13 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      <OtherUnitFiles Value="src\utils;src\modules;src\forms"/>
+      <UnitOutputDirectory Value="C:\Users\Joao Victor\Documents\LazarusGestao\src"/>
     </SearchPaths>
     <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf3"/>
+      </Debugging>
       <Options>
         <Win32>
           <GraphicApplication Value="True"/>
