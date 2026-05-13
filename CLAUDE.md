@@ -3,7 +3,7 @@
 
 ## Contexto do projeto
 Ferramenta de gestão ágil com contagem de horas técnicas e métricas de software.
-Desenvolvida em **Free Pascal / Lazarus** (LCL), banco **SQLite** via componente `TSQLite3Connection` do pacote SQLdb nativo do Lazarus.
+Desenvolvida em **Free Pascal / Lazarus** (LCL), banco ** PostgreSQL 16** via componente `TSQLite3Connection` do pacote SQLdb nativo do Lazarus.
 Projeto escolar — arquitetura simples: **UI → módulo (unit Pascal) → banco**. Sem camada de serviço.
 
 ## Stack obrigatória
