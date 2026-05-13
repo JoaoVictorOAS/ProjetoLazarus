@@ -14,23 +14,27 @@ Projeto acadêmico em **Free Pascal/Lazarus**, com persistência em **PostgreSQL
 - PostgreSQL 16
 - SQLdb (`TPQConnection`, `TSQLTransaction`, `TSQLQuery`)
 
-## Estrutura atual
+## Estrutura de referência (CLAUDE.md)
 
 ```text
 ProjetoLazarus/
 ├── CLAUDE.md
 ├── docs/
-│   ├── AGENT_DATABASE.md
-│   ├── AGENT_MEMBROS.md
-│   ├── AGENT_PROJETOS.md
-│   ├── AGENT_SPRINTS.md
-│   ├── AGENT_TAREFAS.md
-│   ├── AGENT_HORAS.md
-│   └── AGENT_METRICAS.md
+│   └── agents/
+│       ├── AGENT_DATABASE.md
+│       ├── AGENT_MEMBROS.md
+│       ├── AGENT_PROJETOS.md
+│       ├── AGENT_SPRINTS.md
+│       ├── AGENT_TAREFAS.md
+│       ├── AGENT_HORAS.md
+│       └── AGENT_METRICAS.md
 ├── sql/
 │   └── create_database.sql
 ├── src/
+│   ├── AgileLazarus.lpi
 │   ├── AgileLazarus.lpr
+│   ├── modules/
+│   ├── forms/
 │   └── utils/
 │       └── UDBConnection.pas
 ├── project1.lpi
