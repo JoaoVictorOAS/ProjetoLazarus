@@ -1,4 +1,4 @@
-# ProjetoLazarus (AgileLazarus)
+# AgileLazarus (repositório ProjetoLazarus)
 
 Ferramenta de gestão ágil com foco em:
 - cadastro de membros, projetos, sprints e tarefas;
@@ -17,7 +17,7 @@ Projeto acadêmico em **Free Pascal/Lazarus**, com persistência em **PostgreSQL
 ## Estrutura de referência (CLAUDE.md)
 
 ```text
-ProjetoLazarus/
+agile_lazarus/
 ├── CLAUDE.md
 ├── docs/
 │   └── agents/
@@ -37,8 +37,6 @@ ProjetoLazarus/
 │   ├── forms/
 │   └── utils/
 │       └── UDBConnection.pas
-├── project1.lpi
-├── project1.lpr
 └── config.ini
 ```
 
@@ -76,17 +74,17 @@ password=agile123
 ## Como executar
 
 ### Opção 1: Lazarus IDE
-1. Abra `project1.lpi` no Lazarus.
+1. Abra `src/AgileLazarus.lpi` no Lazarus.
 2. Compile e execute pela IDE.
 
 ### Opção 2: linha de comando (se disponível)
 ```bash
-lazbuild project1.lpi
+lazbuild src/AgileLazarus.lpi
 ```
 
 ## Status
 
-O repositório contém a base do projeto e documentação de módulos em `docs/`.
+O repositório contém a base do projeto e documentação de módulos em `docs/agents/`.
 A implementação completa segue a ordem definida em `CLAUDE.md`:
 1. conexão (`UDBConnection`);
 2. membros;
