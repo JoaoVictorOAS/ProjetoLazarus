@@ -5,7 +5,9 @@ Ferramenta de gestão ágil com foco em:
 - apontamento de horas técnicas;
 - métricas de acompanhamento (ex.: velocity e produtividade).
 
-Projeto acadêmico em **Free Pascal/Lazarus**, com persistência em **PostgreSQL**.
+Projeto acadêmico em **Free Pascal/Lazarus**.
+No estado atual do código e do script SQL, a persistência está em **PostgreSQL**
+(`TPQConnection`), embora existam referências históricas a SQLite na documentação.
 
 ## Tecnologias
 
@@ -54,7 +56,8 @@ Execute o script:
 sql/create_database.sql
 ```
 
-Ele cria tabelas principais (`membros`, `projetos`, `sprints`, `tarefas`, `horas_tecnicas`), views e dados iniciais.
+Ele cria tabelas principais (`membros`, `projetos`, `sprints`, `tarefas`, `horas_tecnicas`),
+as views `v_horas_por_tarefa`, `v_horas_por_sprint_tipo` e `v_velocity`, além de dados iniciais.
 
 ## Arquivo de configuração
 
