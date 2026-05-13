@@ -5,9 +5,8 @@ Ferramenta de gestão ágil com foco em:
 - apontamento de horas técnicas;
 - métricas de acompanhamento (ex.: velocity e produtividade).
 
-Projeto acadêmico em **Free Pascal/Lazarus**.
-No estado atual do código e do script SQL, a persistência está em **PostgreSQL**
-(`TPQConnection`), embora existam referências históricas a SQLite na documentação.
+Projeto acadêmico em **Free Pascal/Lazarus** com persistência em **PostgreSQL**
+(`TPQConnection`).
 
 ## Tecnologias
 
@@ -61,7 +60,8 @@ as views `v_horas_por_tarefa`, `v_horas_por_sprint_tipo` e `v_velocity`, além d
 
 ## Arquivo de configuração
 
-Crie/ajuste o `config.ini` na pasta do executável:
+Crie/ajuste o `config.ini` na pasta do executável.
+Durante desenvolvimento, ele pode ficar na raiz do projeto; no deploy, deve acompanhar o binário:
 
 ```ini
 [database]
