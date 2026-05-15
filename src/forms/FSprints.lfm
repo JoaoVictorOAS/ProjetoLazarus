@@ -1,0 +1,181 @@
+object FormSprints: TFormSprints
+  Left = 0
+  Top = 0
+  Width = 760
+  Height = 500
+  Caption = 'Sprints'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 16
+  object PnlTopo: TPanel
+    Left = 0
+    Top = 0
+    Width = 760
+    Height = 40
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 0
+    object LblProjeto: TLabel
+      Left = 8
+      Top = 12
+      Width = 50
+      Height = 16
+      Caption = 'Projeto:'
+    end
+    object CmbProjeto: TComboBox
+      Left = 64
+      Top = 8
+      Width = 300
+      Height = 24
+      Style = csDropDownList
+      OnChange = CmbProjetoChange
+      TabOrder = 0
+    end
+  end
+  object SgSprints: TStringGrid
+    Left = 0
+    Top = 40
+    Width = 760
+    Height = 370
+    Align = alClient
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect]
+    TabOrder = 1
+  end
+  object PnlBotoes: TPanel
+    Left = 0
+    Top = 410
+    Width = 760
+    Height = 44
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 2
+    object BtnNova: TButton
+      Left = 8
+      Top = 8
+      Width = 100
+      Height = 28
+      Caption = 'Nova Sprint'
+      OnClick = BtnNovaClick
+      TabOrder = 0
+    end
+    object BtnIniciar: TButton
+      Left = 112
+      Top = 8
+      Width = 80
+      Height = 28
+      Caption = 'Iniciar'
+      OnClick = BtnIniciarClick
+      TabOrder = 1
+    end
+    object BtnEncerrar: TButton
+      Left = 196
+      Top = 8
+      Width = 80
+      Height = 28
+      Caption = 'Encerrar'
+      OnClick = BtnEncerrarClick
+      TabOrder = 2
+    end
+    object BtnFechar: TButton
+      Left = 672
+      Top = 8
+      Width = 80
+      Height = 28
+      Caption = 'Fechar'
+      OnClick = BtnFecharClick
+      TabOrder = 3
+    end
+  end
+  object PnlEdicao: TPanel
+    Left = 0
+    Top = 454
+    Width = 760
+    Height = 46
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = clWhite
+    TabOrder = 3
+    Visible = False
+    object LblGoal: TLabel
+      Left = 8
+      Top = 14
+      Width = 30
+      Height = 16
+      Caption = 'Goal:'
+    end
+    object EdtGoal: TEdit
+      Left = 44
+      Top = 10
+      Width = 200
+      Height = 24
+      TabOrder = 0
+    end
+    object LblCap: TLabel
+      Left = 252
+      Top = 14
+      Width = 63
+      Height = 16
+      Caption = 'Cap. Pts:'
+    end
+    object EdtCap: TEdit
+      Left = 320
+      Top = 10
+      Width = 50
+      Height = 24
+      TabOrder = 1
+    end
+    object LblInicio: TLabel
+      Left = 378
+      Top = 14
+      Width = 37
+      Height = 16
+      Caption = 'Início:'
+    end
+    object EdtInicio: TEdit
+      Left = 420
+      Top = 10
+      Width = 90
+      Height = 24
+      TabOrder = 2
+    end
+    object LblFim: TLabel
+      Left = 518
+      Top = 14
+      Width = 24
+      Height = 16
+      Caption = 'Fim:'
+    end
+    object EdtFim: TEdit
+      Left = 548
+      Top = 10
+      Width = 90
+      Height = 24
+      TabOrder = 3
+    end
+    object BtnSalvar: TButton
+      Left = 646
+      Top = 8
+      Width = 55
+      Height = 28
+      Caption = 'OK'
+      Default = True
+      OnClick = BtnSalvarClick
+      TabOrder = 4
+    end
+    object BtnCancelar: TButton
+      Left = 704
+      Top = 8
+      Width = 50
+      Height = 28
+      Caption = 'X'
+      OnClick = BtnCancelarClick
+      TabOrder = 5
+    end
+  end
+end

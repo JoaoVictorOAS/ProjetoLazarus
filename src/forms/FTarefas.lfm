@@ -1,0 +1,404 @@
+object FormTarefas: TFormTarefas
+  Left = 0
+  Top = 0
+  Width = 1100
+  Height = 600
+  Caption = 'Tarefas / Kanban'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 16
+  object PnlTopo: TPanel
+    Left = 0
+    Top = 0
+    Width = 1100
+    Height = 44
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 0
+    object LblProjeto: TLabel
+      Left = 8
+      Top = 14
+      Width = 50
+      Height = 16
+      Caption = 'Projeto:'
+    end
+    object CmbProjeto: TComboBox
+      Left = 64
+      Top = 10
+      Width = 220
+      Height = 24
+      Style = csDropDownList
+      OnChange = CmbProjetoChange
+      TabOrder = 0
+    end
+    object LblSprint: TLabel
+      Left = 296
+      Top = 14
+      Width = 45
+      Height = 16
+      Caption = 'Sprint:'
+    end
+    object CmbSprint: TComboBox
+      Left = 348
+      Top = 10
+      Width = 280
+      Height = 24
+      Style = csDropDownList
+      OnChange = CmbSprintChange
+      TabOrder = 1
+    end
+    object BtnAtualizar: TButton
+      Left = 640
+      Top = 8
+      Width = 90
+      Height = 28
+      Caption = 'Atualizar'
+      OnClick = BtnAtualizarClick
+      TabOrder = 2
+    end
+  end
+  object PnlKanban: TPanel
+    Left = 0
+    Top = 44
+    Width = 720
+    Height = 500
+    Align = alLeft
+    BevelOuter = bvNone
+    TabOrder = 1
+    object PnlBacklog: TPanel
+      Left = 0
+      Top = 0
+      Width = 144
+      Height = 500
+      Align = alLeft
+      BevelOuter = bvNone
+      Color = clBtnFace
+      TabOrder = 0
+      object LblBacklog: TLabel
+        Left = 0
+        Top = 0
+        Width = 144
+        Height = 22
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'BACKLOG'
+        Color = clSilver
+        Font.Style = [fsBold]
+        ParentColor = False
+      end
+      object LbBacklog: TListBox
+        Left = 0
+        Top = 22
+        Width = 144
+        Height = 478
+        Align = alClient
+        TabOrder = 0
+      end
+    end
+    object PnlTodo: TPanel
+      Left = 144
+      Top = 0
+      Width = 144
+      Height = 500
+      Align = alLeft
+      BevelOuter = bvNone
+      Color = clBtnFace
+      TabOrder = 1
+      object LblTodo: TLabel
+        Left = 0
+        Top = 0
+        Width = 144
+        Height = 22
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'TO DO'
+        Color = clSkyBlue
+        Font.Style = [fsBold]
+        ParentColor = False
+      end
+      object LbTodo: TListBox
+        Left = 0
+        Top = 22
+        Width = 144
+        Height = 478
+        Align = alClient
+        TabOrder = 0
+      end
+    end
+    object PnlDoing: TPanel
+      Left = 288
+      Top = 0
+      Width = 144
+      Height = 500
+      Align = alLeft
+      BevelOuter = bvNone
+      Color = clBtnFace
+      TabOrder = 2
+      object LblDoing: TLabel
+        Left = 0
+        Top = 0
+        Width = 144
+        Height = 22
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'DOING'
+        Color = clYellow
+        Font.Style = [fsBold]
+        ParentColor = False
+      end
+      object LbDoing: TListBox
+        Left = 0
+        Top = 22
+        Width = 144
+        Height = 478
+        Align = alClient
+        TabOrder = 0
+      end
+    end
+    object PnlReview: TPanel
+      Left = 432
+      Top = 0
+      Width = 144
+      Height = 500
+      Align = alLeft
+      BevelOuter = bvNone
+      Color = clBtnFace
+      TabOrder = 3
+      object LblReview: TLabel
+        Left = 0
+        Top = 0
+        Width = 144
+        Height = 22
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'REVIEW'
+        Color = clAqua
+        Font.Style = [fsBold]
+        ParentColor = False
+      end
+      object LbReview: TListBox
+        Left = 0
+        Top = 22
+        Width = 144
+        Height = 478
+        Align = alClient
+        TabOrder = 0
+      end
+    end
+    object PnlDone: TPanel
+      Left = 576
+      Top = 0
+      Width = 144
+      Height = 500
+      Align = alLeft
+      BevelOuter = bvNone
+      Color = clBtnFace
+      TabOrder = 4
+      object LblDone: TLabel
+        Left = 0
+        Top = 0
+        Width = 144
+        Height = 22
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'DONE'
+        Color = clLime
+        Font.Style = [fsBold]
+        ParentColor = False
+      end
+      object LbDone: TListBox
+        Left = 0
+        Top = 22
+        Width = 144
+        Height = 478
+        Align = alClient
+        TabOrder = 0
+      end
+    end
+  end
+  object PnlEdicao: TPanel
+    Left = 720
+    Top = 44
+    Width = 380
+    Height = 500
+    Align = alRight
+    BevelOuter = bvNone
+    Color = clWhite
+    TabOrder = 2
+    Visible = False
+    object LblTitulo: TLabel
+      Left = 12
+      Top = 12
+      Width = 40
+      Height = 16
+      Caption = 'Título:'
+    end
+    object EdtTitulo: TEdit
+      Left = 12
+      Top = 32
+      Width = 356
+      Height = 24
+      TabOrder = 0
+    end
+    object LblTipo: TLabel
+      Left = 12
+      Top = 64
+      Width = 30
+      Height = 16
+      Caption = 'Tipo:'
+    end
+    object CmbTipo: TComboBox
+      Left = 12
+      Top = 84
+      Width = 120
+      Height = 24
+      Style = csDropDownList
+      TabOrder = 1
+    end
+    object LblPts: TLabel
+      Left = 144
+      Top = 64
+      Width = 41
+      Height = 16
+      Caption = 'Pontos:'
+    end
+    object EdtPts: TEdit
+      Left = 144
+      Top = 84
+      Width = 60
+      Height = 24
+      TabOrder = 2
+    end
+    object LblPrio: TLabel
+      Left = 220
+      Top = 64
+      Width = 56
+      Height = 16
+      Caption = 'Prioridade:'
+    end
+    object EdtPrio: TEdit
+      Left = 220
+      Top = 84
+      Width = 60
+      Height = 24
+      TabOrder = 3
+    end
+    object LblMembro: TLabel
+      Left = 12
+      Top = 116
+      Width = 56
+      Height = 16
+      Caption = 'Membro:'
+    end
+    object CmbMembro: TComboBox
+      Left = 12
+      Top = 136
+      Width = 200
+      Height = 24
+      Style = csDropDownList
+      TabOrder = 4
+    end
+    object LblDescTarefa: TLabel
+      Left = 12
+      Top = 168
+      Width = 56
+      Height = 16
+      Caption = 'Descrição:'
+    end
+    object MmoDesc: TMemo
+      Left = 12
+      Top = 188
+      Width = 356
+      Height = 100
+      TabOrder = 5
+    end
+    object BtnSalvarT: TButton
+      Left = 12
+      Top = 304
+      Width = 110
+      Height = 32
+      Caption = 'Salvar'
+      Default = True
+      OnClick = BtnSalvarTClick
+      TabOrder = 6
+    end
+    object BtnCancelarT: TButton
+      Left = 130
+      Top = 304
+      Width = 110
+      Height = 32
+      Caption = 'Cancelar'
+      OnClick = BtnCancelarTClick
+      TabOrder = 7
+    end
+  end
+  object PnlAcoes: TPanel
+    Left = 720
+    Top = 544
+    Width = 1100
+    Height = 56
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 3
+    object BtnNova: TButton
+      Left = 8
+      Top = 10
+      Width = 90
+      Height = 32
+      Caption = 'Nova Tarefa'
+      OnClick = BtnNovaClick
+      TabOrder = 0
+    end
+    object BtnAvancar: TButton
+      Left = 104
+      Top = 10
+      Width = 90
+      Height = 32
+      Caption = '→ Avançar'
+      OnClick = BtnAvancarClick
+      TabOrder = 1
+    end
+    object BtnVoltar: TButton
+      Left = 198
+      Top = 10
+      Width = 90
+      Height = 32
+      Caption = '← Voltar'
+      OnClick = BtnVoltarClick
+      TabOrder = 2
+    end
+    object BtnEditar: TButton
+      Left = 292
+      Top = 10
+      Width = 80
+      Height = 32
+      Caption = 'Editar'
+      OnClick = BtnEditarClick
+      TabOrder = 3
+    end
+    object BtnDeletar: TButton
+      Left = 376
+      Top = 10
+      Width = 80
+      Height = 32
+      Caption = 'Excluir'
+      OnClick = BtnDeletarClick
+      TabOrder = 4
+    end
+    object BtnFechar: TButton
+      Left = 1012
+      Top = 10
+      Width = 80
+      Height = 32
+      Caption = 'Fechar'
+      OnClick = BtnFecharClick
+      TabOrder = 5
+    end
+  end
+end

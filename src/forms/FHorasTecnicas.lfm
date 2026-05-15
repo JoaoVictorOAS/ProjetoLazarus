@@ -1,0 +1,278 @@
+object FormHorasTecnicas: TFormHorasTecnicas
+  Left = 0
+  Top = 0
+  Width = 800
+  Height = 580
+  Caption = 'Horas Técnicas'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 16
+  object PnlTimer: TPanel
+    Left = 0
+    Top = 0
+    Width = 800
+    Height = 100
+    Align = alTop
+    BevelOuter = bvNone
+    Color = clWhite
+    TabOrder = 0
+    object LblMembro: TLabel
+      Left = 8
+      Top = 8
+      Width = 54
+      Height = 16
+      Caption = 'Membro:'
+    end
+    object CmbMembro: TComboBox
+      Left = 8
+      Top = 28
+      Width = 180
+      Height = 24
+      Style = csDropDownList
+      OnChange = CmbMembroChange
+      TabOrder = 0
+    end
+    object LblTarefa: TLabel
+      Left = 200
+      Top = 8
+      Width = 47
+      Height = 16
+      Caption = 'Tarefa:'
+    end
+    object CmbTarefa: TComboBox
+      Left = 200
+      Top = 28
+      Width = 280
+      Height = 24
+      Style = csDropDownList
+      OnChange = CmbTarefaChange
+      TabOrder = 1
+    end
+    object LblTipo: TLabel
+      Left = 492
+      Top = 8
+      Width = 30
+      Height = 16
+      Caption = 'Tipo:'
+    end
+    object CmbTipo: TComboBox
+      Left = 492
+      Top = 28
+      Width = 160
+      Height = 24
+      Style = csDropDownList
+      TabOrder = 2
+    end
+    object BtnIniciar: TButton
+      Left = 8
+      Top = 64
+      Width = 90
+      Height = 28
+      Caption = '▶ Iniciar'
+      OnClick = BtnIniciarClick
+      TabOrder = 3
+    end
+    object BtnParar: TButton
+      Left = 104
+      Top = 64
+      Width = 90
+      Height = 28
+      Caption = '■ Parar'
+      Enabled = False
+      OnClick = BtnPararClick
+      TabOrder = 4
+    end
+    object LblTempo: TLabel
+      Left = 212
+      Top = 68
+      Width = 60
+      Height = 20
+      Caption = '00:00'
+      Font.Height = -16
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object TimerTick: TTimer
+      Enabled = False
+      Interval = 1000
+      OnTimer = TimerTickTimer
+      Left = 700
+      Top = 60
+    end
+  end
+  object PnlLog: TPanel
+    Left = 0
+    Top = 100
+    Width = 800
+    Height = 280
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 1
+    object SgHoras: TStringGrid
+      Left = 0
+      Top = 0
+      Width = 800
+      Height = 240
+      Align = alClient
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect]
+      TabOrder = 0
+    end
+    object PnlBotLog: TPanel
+      Left = 0
+      Top = 240
+      Width = 800
+      Height = 40
+      Align = alBottom
+      BevelOuter = bvNone
+      TabOrder = 1
+      object BtnManual: TButton
+        Left = 8
+        Top = 6
+        Width = 130
+        Height = 28
+        Caption = 'Lançar Manual'
+        OnClick = BtnManualClick
+        TabOrder = 0
+      end
+      object BtnDeletarH: TButton
+        Left = 144
+        Top = 6
+        Width = 80
+        Height = 28
+        Caption = 'Excluir'
+        OnClick = BtnDeletarHClick
+        TabOrder = 1
+      end
+      object BtnFechar: TButton
+        Left = 712
+        Top = 6
+        Width = 80
+        Height = 28
+        Caption = 'Fechar'
+        OnClick = BtnFecharClick
+        TabOrder = 2
+      end
+    end
+  end
+  object PnlResumo: TPanel
+    Left = 0
+    Top = 380
+    Width = 800
+    Height = 140
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 2
+    object LblResumoTit: TLabel
+      Left = 8
+      Top = 4
+      Width = 130
+      Height = 16
+      Caption = 'Resumo por tipo:'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object SgResumo: TStringGrid
+      Left = 0
+      Top = 24
+      Width = 800
+      Height = 116
+      Align = alBottom
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect]
+      TabOrder = 0
+    end
+  end
+  object PnlEdicaoManual: TPanel
+    Left = 0
+    Top = 520
+    Width = 800
+    Height = 60
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = clInfoBk
+    TabOrder = 3
+    Visible = False
+    object LblInicioM: TLabel
+      Left = 8
+      Top = 14
+      Width = 37
+      Height = 16
+      Caption = 'Início:'
+    end
+    object EdtInicio: TEdit
+      Left = 50
+      Top = 10
+      Width = 140
+      Height = 24
+      TabOrder = 0
+    end
+    object LblFimM: TLabel
+      Left = 198
+      Top = 14
+      Width = 24
+      Height = 16
+      Caption = 'Fim:'
+    end
+    object EdtFim: TEdit
+      Left = 228
+      Top = 10
+      Width = 140
+      Height = 24
+      TabOrder = 1
+    end
+    object LblTipoM: TLabel
+      Left = 376
+      Top = 14
+      Width = 30
+      Height = 16
+      Caption = 'Tipo:'
+    end
+    object CmbTipoM: TComboBox
+      Left = 412
+      Top = 10
+      Width = 140
+      Height = 24
+      Style = csDropDownList
+      TabOrder = 2
+    end
+    object LblObsM: TLabel
+      Left = 560
+      Top = 14
+      Width = 25
+      Height = 16
+      Caption = 'Obs:'
+    end
+    object EdtObs: TEdit
+      Left = 590
+      Top = 10
+      Width = 100
+      Height = 24
+      TabOrder = 3
+    end
+    object BtnSalvarM: TButton
+      Left = 696
+      Top = 8
+      Width = 50
+      Height = 28
+      Caption = 'OK'
+      Default = True
+      OnClick = BtnSalvarMClick
+      TabOrder = 4
+    end
+    object BtnCancelarM: TButton
+      Left = 750
+      Top = 8
+      Width = 44
+      Height = 28
+      Caption = 'X'
+      OnClick = BtnCancelarMClick
+      TabOrder = 5
+    end
+  end
+end

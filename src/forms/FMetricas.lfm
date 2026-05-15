@@ -1,0 +1,227 @@
+object FormMetricas: TFormMetricas
+  Left = 0
+  Top = 0
+  Width = 900
+  Height = 620
+  Caption = 'Métricas do Projeto'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 16
+  object PnlTopo: TPanel
+    Left = 0
+    Top = 0
+    Width = 900
+    Height = 44
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 0
+    object LblProjeto: TLabel
+      Left = 8
+      Top = 14
+      Width = 50
+      Height = 16
+      Caption = 'Projeto:'
+    end
+    object CmbProjeto: TComboBox
+      Left = 64
+      Top = 10
+      Width = 220
+      Height = 24
+      Style = csDropDownList
+      OnChange = CmbProjetoChange
+      TabOrder = 0
+    end
+    object LblSprint: TLabel
+      Left = 296
+      Top = 14
+      Width = 45
+      Height = 16
+      Caption = 'Sprint:'
+    end
+    object CmbSprint: TComboBox
+      Left = 348
+      Top = 10
+      Width = 200
+      Height = 24
+      Style = csDropDownList
+      TabOrder = 1
+    end
+    object BtnAtualizar: TButton
+      Left = 560
+      Top = 8
+      Width = 90
+      Height = 28
+      Caption = 'Atualizar'
+      OnClick = BtnAtualizarClick
+      TabOrder = 2
+    end
+    object BtnFechar: TButton
+      Left = 812
+      Top = 8
+      Width = 80
+      Height = 28
+      Caption = 'Fechar'
+      OnClick = BtnFecharClick
+      TabOrder = 3
+    end
+  end
+  object PnlCards: TPanel
+    Left = 0
+    Top = 44
+    Width = 900
+    Height = 90
+    Align = alTop
+    BevelOuter = bvNone
+    Color = clBtnFace
+    TabOrder = 1
+    object PnlHorasPts: TPanel
+      Left = 8
+      Top = 8
+      Width = 200
+      Height = 74
+      BevelOuter = bvRaised
+      Color = clWhite
+      TabOrder = 0
+      object LblHorasPtsTit: TLabel
+        Left = 8
+        Top = 8
+        Width = 110
+        Height = 16
+        Caption = 'Horas / Story Point'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object LblHorasPtsVal: TLabel
+        Left = 8
+        Top = 36
+        Width = 60
+        Height = 28
+        Caption = '--'
+        Font.Height = -20
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+    end
+    object PnlLeadTime: TPanel
+      Left = 224
+      Top = 8
+      Width = 200
+      Height = 74
+      BevelOuter = bvRaised
+      Color = clWhite
+      TabOrder = 1
+      object LblLeadTimeTit: TLabel
+        Left = 8
+        Top = 8
+        Width = 110
+        Height = 16
+        Caption = 'Lead Time Médio'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object LblLeadTimeVal: TLabel
+        Left = 8
+        Top = 36
+        Width = 60
+        Height = 28
+        Caption = '--'
+        Font.Height = -20
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+    end
+    object PnlBugs: TPanel
+      Left = 440
+      Top = 8
+      Width = 200
+      Height = 74
+      BevelOuter = bvRaised
+      Color = clWhite
+      TabOrder = 2
+      object LblBugsTit: TLabel
+        Left = 8
+        Top = 8
+        Width = 80
+        Height = 16
+        Caption = 'Total de Bugs'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object LblBugsVal: TLabel
+        Left = 8
+        Top = 36
+        Width = 60
+        Height = 28
+        Caption = '--'
+        Font.Height = -20
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+    end
+    object PnlTaxaBugs: TPanel
+      Left = 656
+      Top = 8
+      Width = 200
+      Height = 74
+      BevelOuter = bvRaised
+      Color = clWhite
+      TabOrder = 3
+      object LblTaxaBugsTit: TLabel
+        Left = 8
+        Top = 8
+        Width = 75
+        Height = 16
+        Caption = 'Taxa de Bugs'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object LblTaxaBugsVal: TLabel
+        Left = 8
+        Top = 36
+        Width = 60
+        Height = 28
+        Caption = '--'
+        Font.Height = -20
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+    end
+  end
+  object PnlCharts: TPanel
+    Left = 0
+    Top = 134
+    Width = 900
+    Height = 486
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 2
+    object ChartVelocity: TChart
+      Left = 0
+      Top = 0
+      Width = 450
+      Height = 486
+      Align = alLeft
+      Title.Text.Strings = (
+        'Velocity'
+      )
+      TabOrder = 0
+    end
+    object ChartBurndown: TChart
+      Left = 450
+      Top = 0
+      Width = 450
+      Height = 486
+      Align = alClient
+      Title.Text.Strings = (
+        'Burndown'
+      )
+      TabOrder = 1
+    end
+  end
+end
