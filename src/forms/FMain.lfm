@@ -1,0 +1,70 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Width = 900
+  Height = 600
+  Caption = 'AgileLazarus'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 16
+  object PnlStatus: TPanel
+    Left = 0
+    Top = 566
+    Width = 900
+    Height = 34
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = clSilver
+    TabOrder = 0
+    object LblStatus: TLabel
+      Left = 8
+      Top = 8
+      Width = 40
+      Height = 16
+      Caption = 'Pronto'
+    end
+  end
+  object MainMenu1: TMainMenu
+    object MnuCadastros: TMenuItem
+      Caption = 'Cadastros'
+      object MnuMembros: TMenuItem
+        Caption = 'Membros'
+        OnClick = MnuMembrosClick
+      end
+      object MnuProjetos: TMenuItem
+        Caption = 'Projetos'
+        OnClick = MnuProjetosClick
+      end
+      object MnuSprints: TMenuItem
+        Caption = 'Sprints'
+        OnClick = MnuSprintsClick
+      end
+      object MnuTarefas: TMenuItem
+        Caption = 'Tarefas / Kanban'
+        OnClick = MnuTarefasClick
+      end
+      object MnuHoras: TMenuItem
+        Caption = 'Horas Técnicas'
+        OnClick = MnuHorasClick
+      end
+      object MnuSep1: TMenuItem
+        Caption = '-'
+      end
+      object MnuMetricas: TMenuItem
+        Caption = 'Métricas'
+        OnClick = MnuMetricasClick
+      end
+      object MnuSair: TMenuItem
+        Caption = 'Sair'
+        OnClick = MnuSairClick
+      end
+    end
+  end
+end

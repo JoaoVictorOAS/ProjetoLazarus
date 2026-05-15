@@ -1,0 +1,231 @@
+object FormProjetos: TFormProjetos
+  Left = 0
+  Top = 0
+  Width = 820
+  Height = 540
+  Caption = 'Projetos'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 16
+  object PnlLista: TPanel
+    Left = 0
+    Top = 0
+    Width = 460
+    Height = 540
+    Align = alLeft
+    BevelOuter = bvNone
+    TabOrder = 0
+    object SgProjetos: TStringGrid
+      Left = 0
+      Top = 0
+      Width = 460
+      Height = 496
+      Align = alClient
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect]
+      OnSelectCell = SgProjetosSelectCell
+      TabOrder = 0
+    end
+    object PnlAcoes: TPanel
+      Left = 0
+      Top = 496
+      Width = 460
+      Height = 44
+      Align = alBottom
+      BevelOuter = bvNone
+      TabOrder = 1
+      object BtnNovo: TButton
+        Left = 4
+        Top = 8
+        Width = 80
+        Height = 28
+        Caption = 'Novo'
+        OnClick = BtnNovoClick
+        TabOrder = 0
+      end
+      object BtnEditar: TButton
+        Left = 88
+        Top = 8
+        Width = 80
+        Height = 28
+        Caption = 'Editar'
+        OnClick = BtnEditarClick
+        TabOrder = 1
+      end
+      object BtnEncerrar: TButton
+        Left = 172
+        Top = 8
+        Width = 90
+        Height = 28
+        Caption = 'Encerrar'
+        OnClick = BtnEncerrarClick
+        TabOrder = 2
+      end
+      object BtnFechar: TButton
+        Left = 376
+        Top = 8
+        Width = 80
+        Height = 28
+        Caption = 'Fechar'
+        OnClick = BtnFecharClick
+        TabOrder = 3
+      end
+    end
+  end
+  object PcEdicao: TPageControl
+    Left = 460
+    Top = 0
+    Width = 360
+    Height = 540
+    Align = alRight
+    TabOrder = 1
+    Visible = False
+    object TabDados: TTabSheet
+      Caption = 'Dados'
+      object LblNome: TLabel
+        Left = 12
+        Top = 12
+        Width = 35
+        Height = 16
+        Caption = 'Nome:'
+      end
+      object EdtNome: TEdit
+        Left = 12
+        Top = 32
+        Width = 320
+        Height = 24
+        TabOrder = 0
+      end
+      object LblDesc: TLabel
+        Left = 12
+        Top = 64
+        Width = 56
+        Height = 16
+        Caption = 'Descrição:'
+      end
+      object MmoDesc: TMemo
+        Left = 12
+        Top = 84
+        Width = 320
+        Height = 80
+        TabOrder = 1
+      end
+      object LblStatus: TLabel
+        Left = 12
+        Top = 172
+        Width = 42
+        Height = 16
+        Caption = 'Status:'
+      end
+      object CmbStatus: TComboBox
+        Left = 12
+        Top = 192
+        Width = 160
+        Height = 24
+        Style = csDropDownList
+        TabOrder = 2
+      end
+      object LblInicio: TLabel
+        Left = 12
+        Top = 224
+        Width = 37
+        Height = 16
+        Caption = 'Início:'
+      end
+      object EdtInicio: TEdit
+        Left = 12
+        Top = 244
+        Width = 140
+        Height = 24
+        TabOrder = 3
+      end
+      object LblFim: TLabel
+        Left = 160
+        Top = 224
+        Width = 24
+        Height = 16
+        Caption = 'Fim:'
+      end
+      object EdtFim: TEdit
+        Left = 160
+        Top = 244
+        Width = 140
+        Height = 24
+        TabOrder = 4
+      end
+      object BtnSalvar: TButton
+        Left = 12
+        Top = 288
+        Width = 110
+        Height = 32
+        Caption = 'Salvar'
+        Default = True
+        OnClick = BtnSalvarClick
+        TabOrder = 5
+      end
+      object BtnCancelar: TButton
+        Left = 130
+        Top = 288
+        Width = 110
+        Height = 32
+        Caption = 'Cancelar'
+        OnClick = BtnCancelarClick
+        TabOrder = 6
+      end
+    end
+    object TabMembros: TTabSheet
+      Caption = 'Membros'
+      object LblDisp: TLabel
+        Left = 12
+        Top = 8
+        Width = 89
+        Height = 16
+        Caption = 'Disponíveis:'
+      end
+      object LbDisponiveis: TListBox
+        Left = 12
+        Top = 28
+        Width = 140
+        Height = 300
+        TabOrder = 0
+      end
+      object BtnAdd: TButton
+        Left = 158
+        Top = 120
+        Width = 40
+        Height = 28
+        Caption = '>>'
+        OnClick = BtnAddClick
+        TabOrder = 1
+      end
+      object BtnRemover: TButton
+        Left = 158
+        Top = 156
+        Width = 40
+        Height = 28
+        Caption = '<<'
+        OnClick = BtnRemoverClick
+        TabOrder = 2
+      end
+      object LblNoPrj: TLabel
+        Left = 204
+        Top = 8
+        Width = 75
+        Height = 16
+        Caption = 'No projeto:'
+      end
+      object LbNoProjeto: TListBox
+        Left = 204
+        Top = 28
+        Width = 140
+        Height = 300
+        TabOrder = 3
+      end
+    end
+  end
+end

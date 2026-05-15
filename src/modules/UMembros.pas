@@ -1,0 +1,151 @@
+unit UMembros;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, sqldb, UDBConnection;
+
+type
+  TMembro = record
+    Id    : Integer;
+    Nome  : string;
+    Papel : string;
+    Email : string;
+    Ativo : Boolean;
+  end;
+
+  TMembros = class
+  public
+    class function  Listar(ApenasAtivos: Boolean = True): TArray<TMembro>;
+    class function  BuscarPorId(AId: Integer): TMembro;
+    class function  Inserir(const AMembro: TMembro): Integer;
+    class procedure Atualizar(const AMembro: TMembro);
+    class procedure Desativar(AId: Integer);
+    class function  PapeisValidos: TStringArray;
+  end;
+
+implementation
+
+class function TMembros.PapeisValidos: TStringArray;
+begin
+  Result := TStringArray.Create('dev','qa','po','sm','designer','outro');
+end;
+
+class function TMembros.Listar(ApenasAtivos: Boolean): TArray<TMembro>;
+var
+  Q: TSQLQuery;
+  Lista: TArray<TMembro>;
+  Idx: Integer;
+begin
+  Q := TDBConnection.NewQuery;
+  try
+    if ApenasAtivos then
+      Q.SQL.Text :=
+        'SELECT id, nome, papel, email, ativo FROM membros WHERE ativo = TRUE ORDER BY nome'
+    else
+      Q.SQL.Text :=
+        'SELECT id, nome, papel, email, ativo FROM membros ORDER BY nome';
+    Q.Open;
+    SetLength(Lista, 0);
+    Idx := 0;
+    while not Q.EOF do
+    begin
+      SetLength(Lista, Idx + 1);
+      Lista[Idx].Id    := Q.FieldByName('id').AsInteger;
+      Lista[Idx].Nome  := Q.FieldByName('nome').AsString;
+      Lista[Idx].Papel := Q.FieldByName('papel').AsString;
+      Lista[Idx].Email := Q.FieldByName('email').AsString;
+      Lista[Idx].Ativo := Q.FieldByName('ativo').AsBoolean;
+      Inc(Idx);
+      Q.Next;
+    end;
+    Result := Lista;
+  finally
+    Q.Close;
+    Q.Free;
+  end;
+end;
+
+class function TMembros.BuscarPorId(AId: Integer): TMembro;
+var
+  Q: TSQLQuery;
+begin
+  Q := TDBConnection.NewQuery;
+  try
+    Q.SQL.Text :=
+      'SELECT id, nome, papel, email, ativo FROM membros WHERE id = :id';
+    Q.Params.ParamByName('id').AsInteger := AId;
+    Q.Open;
+    if Q.EOF then
+      raise Exception.CreateFmt('Membro %d não encontrado', [AId]);
+    Result.Id    := Q.FieldByName('id').AsInteger;
+    Result.Nome  := Q.FieldByName('nome').AsString;
+    Result.Papel := Q.FieldByName('papel').AsString;
+    Result.Email := Q.FieldByName('email').AsString;
+    Result.Ativo := Q.FieldByName('ativo').AsBoolean;
+  finally
+    Q.Close;
+    Q.Free;
+  end;
+end;
+
+class function TMembros.Inserir(const AMembro: TMembro): Integer;
+var
+  Q: TSQLQuery;
+begin
+  Q := TDBConnection.NewQuery;
+  try
+    Q.SQL.Text :=
+      'INSERT INTO membros (nome, papel, email) ' +
+      'VALUES (:nome, :papel, :email) RETURNING id';
+    Q.Params.ParamByName('nome').AsString  := AMembro.Nome;
+    Q.Params.ParamByName('papel').AsString := AMembro.Papel;
+    Q.Params.ParamByName('email').AsString := AMembro.Email;
+    Q.Open;
+    Result := Q.FieldByName('id').AsInteger;
+    TDBConnection.Commit;
+  finally
+    Q.Close;
+    Q.Free;
+  end;
+end;
+
+class procedure TMembros.Atualizar(const AMembro: TMembro);
+var
+  Q: TSQLQuery;
+begin
+  Q := TDBConnection.NewQuery;
+  try
+    Q.SQL.Text :=
+      'UPDATE membros SET nome=:nome, papel=:papel, email=:email WHERE id=:id';
+    Q.Params.ParamByName('nome').AsString  := AMembro.Nome;
+    Q.Params.ParamByName('papel').AsString := AMembro.Papel;
+    Q.Params.ParamByName('email').AsString := AMembro.Email;
+    Q.Params.ParamByName('id').AsInteger   := AMembro.Id;
+    Q.ExecSQL;
+    TDBConnection.Commit;
+  finally
+    Q.Close;
+    Q.Free;
+  end;
+end;
+
+class procedure TMembros.Desativar(AId: Integer);
+var
+  Q: TSQLQuery;
+begin
+  Q := TDBConnection.NewQuery;
+  try
+    Q.SQL.Text := 'UPDATE membros SET ativo = FALSE WHERE id = :id';
+    Q.Params.ParamByName('id').AsInteger := AId;
+    Q.ExecSQL;
+    TDBConnection.Commit;
+  finally
+    Q.Close;
+    Q.Free;
+  end;
+end;
+
+end.
