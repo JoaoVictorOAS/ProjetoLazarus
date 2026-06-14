@@ -11,7 +11,6 @@
       <XPManifest>
         <DpiAware Value="True"/>
       </XPManifest>
-      <Icon Value="0"/>
     </General>
     <BuildModes>
       <Item Name="Default" Default="True"/>
@@ -24,9 +23,6 @@
       <FormatVersion Value="2"/>
     </RunParams>
     <RequiredPackages>
-      <Item>
-        <PackageName Value="TAChartLazarusPkg"/>
-      </Item>
       <Item>
         <PackageName Value="SQLDBLaz"/>
       </Item>
@@ -42,86 +38,73 @@
       <Unit>
         <Filename Value="utils/UDBConnection.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="UDBConnection"/>
       </Unit>
       <Unit>
         <Filename Value="modules/UMembros.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="UMembros"/>
       </Unit>
       <Unit>
         <Filename Value="modules/UProjetos.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="UProjetos"/>
       </Unit>
       <Unit>
         <Filename Value="modules/USprints.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="USprints"/>
       </Unit>
       <Unit>
         <Filename Value="modules/UTarefas.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="UTarefas"/>
       </Unit>
       <Unit>
         <Filename Value="modules/UHorasTecnicas.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="UHorasTecnicas"/>
       </Unit>
       <Unit>
         <Filename Value="modules/UMetricas.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="UMetricas"/>
       </Unit>
       <Unit>
         <Filename Value="forms/FMain.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormMain"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="FMain"/>
       </Unit>
       <Unit>
         <Filename Value="forms/FMembros.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormMembros"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="FMembros"/>
       </Unit>
       <Unit>
         <Filename Value="forms/FProjetos.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormProjetos"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="FProjetos"/>
       </Unit>
       <Unit>
         <Filename Value="forms/FSprints.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormSprints"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="FSprints"/>
       </Unit>
       <Unit>
         <Filename Value="forms/FTarefas.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormTarefas"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="FTarefas"/>
       </Unit>
       <Unit>
         <Filename Value="forms/FHorasTecnicas.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormHorasTecnicas"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="FHorasTecnicas"/>
       </Unit>
       <Unit>
         <Filename Value="forms/FMetricas.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormMetricas"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="FMetricas"/>
       </Unit>
     </Units>
   </ProjectOptions>

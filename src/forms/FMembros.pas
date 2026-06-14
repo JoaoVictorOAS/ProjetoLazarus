@@ -86,7 +86,7 @@ end;
 
 procedure TFormMembros.CarregarGrid;
 var
-  Lista: TArray<TMembro>;
+  Lista: TArrayMembro;
   I: Integer;
 begin
   Lista := TMembros.Listar(not ChkInativos.Checked);

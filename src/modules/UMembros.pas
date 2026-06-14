@@ -16,9 +16,11 @@ type
     Ativo : Boolean;
   end;
 
+  TArrayMembro = array of TMembro;
+
   TMembros = class
   public
-    class function  Listar(ApenasAtivos: Boolean = True): TArray<TMembro>;
+    class function  Listar(ApenasAtivos: Boolean = True): TArrayMembro;
     class function  BuscarPorId(AId: Integer): TMembro;
     class function  Inserir(const AMembro: TMembro): Integer;
     class procedure Atualizar(const AMembro: TMembro);
@@ -33,10 +35,10 @@ begin
   Result := TStringArray.Create('dev','qa','po','sm','designer','outro');
 end;
 
-class function TMembros.Listar(ApenasAtivos: Boolean): TArray<TMembro>;
+class function TMembros.Listar(ApenasAtivos: Boolean): TArrayMembro;
 var
   Q: TSQLQuery;
-  Lista: TArray<TMembro>;
+  Lista: TArrayMembro;
   Idx: Integer;
 begin
   Q := TDBConnection.NewQuery;

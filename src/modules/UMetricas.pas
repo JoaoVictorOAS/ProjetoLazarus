@@ -19,10 +19,13 @@ type
     PontosRestantes: Integer;
   end;
 
+  TArrayVelocityItem = array of TVelocityItem;
+  TArrayBurndownItem = array of TBurndownItem;
+
   TMetricas = class
   public
-    class function Velocity(AProjetoId: Integer): TArray<TVelocityItem>;
-    class function Burndown(ASprintId: Integer): TArray<TBurndownItem>;
+    class function Velocity(AProjetoId: Integer): TArrayVelocityItem;
+    class function Burndown(ASprintId: Integer): TArrayBurndownItem;
     class function HorasPorPonto(ASprintId: Integer): Double;
     class function LeadTimeMedio(ASprintId: Integer): Double;
     class function TotalBugs(ASprintId: Integer): Integer;
@@ -31,12 +34,13 @@ type
 
 implementation
 
-class function TMetricas.Velocity(AProjetoId: Integer): TArray<TVelocityItem>;
+class function TMetricas.Velocity(AProjetoId: Integer): TArrayVelocityItem;
 var
   Q: TSQLQuery;
-  Lista: TArray<TVelocityItem>;
+  Lista: TArrayVelocityItem;
   Idx: Integer;
 begin
+  Lista := nil;
   Q := TDBConnection.NewQuery;
   try
     Q.SQL.Text :=
@@ -62,12 +66,13 @@ begin
   end;
 end;
 
-class function TMetricas.Burndown(ASprintId: Integer): TArray<TBurndownItem>;
+class function TMetricas.Burndown(ASprintId: Integer): TArrayBurndownItem;
 var
   Q: TSQLQuery;
-  Lista: TArray<TBurndownItem>;
+  Lista: TArrayBurndownItem;
   Idx: Integer;
 begin
+  Lista := nil;
   Q := TDBConnection.NewQuery;
   try
     Q.SQL.Text :=

@@ -17,16 +17,19 @@ type
     DataFim    : string;
   end;
 
+  TArrayProjeto  = array of TProjeto;
+  TArrayInteger  = array of Integer;
+
   TProjetos = class
   public
-    class function  Listar: TArray<TProjeto>;
+    class function  Listar: TArrayProjeto;
     class function  BuscarPorId(AId: Integer): TProjeto;
     class function  Inserir(const AP: TProjeto): Integer;
     class procedure Atualizar(const AP: TProjeto);
     class procedure Encerrar(AId: Integer);
     class procedure AssociarMembro(AProjetoId, AMembroId: Integer);
     class procedure RemoverMembro(AProjetoId, AMembroId: Integer);
-    class function  ListarMembros(AProjetoId: Integer): TArray<Integer>;
+    class function  ListarMembros(AProjetoId: Integer): TArrayInteger;
     class function  StatusValidos: TStringArray;
   end;
 
@@ -37,10 +40,10 @@ begin
   Result := TStringArray.Create('ativo','pausado','encerrado');
 end;
 
-class function TProjetos.Listar: TArray<TProjeto>;
+class function TProjetos.Listar: TArrayProjeto;
 var
   Q: TSQLQuery;
-  Lista: TArray<TProjeto>;
+  Lista: TArrayProjeto;
   Idx: Integer;
 begin
   Q := TDBConnection.NewQuery;
@@ -197,10 +200,10 @@ begin
   end;
 end;
 
-class function TProjetos.ListarMembros(AProjetoId: Integer): TArray<Integer>;
+class function TProjetos.ListarMembros(AProjetoId: Integer): TArrayInteger;
 var
   Q: TSQLQuery;
-  Lista: TArray<Integer>;
+  Lista: TArrayInteger;
   Idx: Integer;
 begin
   Q := TDBConnection.NewQuery;

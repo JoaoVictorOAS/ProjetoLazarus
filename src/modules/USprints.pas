@@ -19,9 +19,11 @@ type
     DataFim       : string;
   end;
 
+  TArraySprint = array of TSprint;
+
   TSprints = class
   public
-    class function  ListarPorProjeto(AProjetoId: Integer): TArray<TSprint>;
+    class function  ListarPorProjeto(AProjetoId: Integer): TArraySprint;
     class function  BuscarAtiva(AProjetoId: Integer): TSprint;
     class function  BuscarPorId(AId: Integer): TSprint;
     class function  Inserir(const AS_: TSprint): Integer;
@@ -51,10 +53,10 @@ begin
   end;
 end;
 
-class function TSprints.ListarPorProjeto(AProjetoId: Integer): TArray<TSprint>;
+class function TSprints.ListarPorProjeto(AProjetoId: Integer): TArraySprint;
 var
   Q: TSQLQuery;
-  Lista: TArray<TSprint>;
+  Lista: TArraySprint;
   Idx: Integer;
 begin
   Q := TDBConnection.NewQuery;

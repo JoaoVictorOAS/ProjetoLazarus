@@ -21,6 +21,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="3"/>
         <CursorPos X="11" Y="3"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
@@ -29,22 +31,16 @@
       <Unit>
         <Filename Value="src\utils\UDBConnection.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="29"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="62"/>
         <CursorPos X="87" Y="47"/>
         <UsageCount Value="20"/>
-        <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="1">
+    <JumpHistory>
       <Position>
         <Filename Value="unit1.pas"/>
         <Caret Line="3" Column="11"/>
-      </Position>
-      <Position>
-        <Filename Value="src\utils\UDBConnection.pas"/>
-        <Caret Line="41" Column="11" TopLine="30"/>
       </Position>
     </JumpHistory>
     <RunParams>

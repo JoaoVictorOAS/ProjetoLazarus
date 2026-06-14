@@ -20,10 +20,12 @@ type
     Prioridade: Integer;
   end;
 
+  TArrayTarefa = array of TTarefa;
+
   TTarefas = class
   public
-    class function  ListarPorSprint(ASprintId: Integer): TArray<TTarefa>;
-    class function  ListarBacklog(AProjetoId: Integer): TArray<TTarefa>;
+    class function  ListarPorSprint(ASprintId: Integer): TArrayTarefa;
+    class function  ListarBacklog(AProjetoId: Integer): TArrayTarefa;
     class function  BuscarPorId(AId: Integer): TTarefa;
     class function  Inserir(const AT: TTarefa): Integer;
     class procedure Atualizar(const AT: TTarefa);
@@ -46,12 +48,13 @@ begin
   Result := TStringArray.Create('story','bug','task','spike');
 end;
 
-class function TTarefas.ListarPorSprint(ASprintId: Integer): TArray<TTarefa>;
+class function TTarefas.ListarPorSprint(ASprintId: Integer): TArrayTarefa;
 var
   Q: TSQLQuery;
-  Lista: TArray<TTarefa>;
+  Lista: TArrayTarefa;
   Idx: Integer;
 begin
+  Lista := nil;
   Q := TDBConnection.NewQuery;
   try
     Q.SQL.Text :=
@@ -83,12 +86,13 @@ begin
   end;
 end;
 
-class function TTarefas.ListarBacklog(AProjetoId: Integer): TArray<TTarefa>;
+class function TTarefas.ListarBacklog(AProjetoId: Integer): TArrayTarefa;
 var
   Q: TSQLQuery;
-  Lista: TArray<TTarefa>;
+  Lista: TArrayTarefa;
   Idx: Integer;
 begin
+  Lista := nil;
   Q := TDBConnection.NewQuery;
   try
     Q.SQL.Text :=

@@ -5,7 +5,7 @@ unit FSprints;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs,
+  Classes, SysUtils, DateUtils, Forms, Controls, Graphics, Dialogs,
   StdCtrls, Grids, ExtCtrls,
   USprints, UProjetos;
 
@@ -85,7 +85,7 @@ end;
 
 procedure TFormSprints.CarregarProjetos;
 var
-  Lista: TArray<TProjeto>;
+  Lista: TArrayProjeto;
   P: TProjeto;
 begin
   CmbProjeto.Clear;
@@ -101,7 +101,7 @@ end;
 
 procedure TFormSprints.CarregarSprints;
 var
-  Lista: TArray<TSprint>;
+  Lista: TArraySprint;
   ProjetoId, I: Integer;
 begin
   ProjetoId := ProjetoIdSelecionado;

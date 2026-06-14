@@ -117,7 +117,7 @@ end;
 
 procedure TFormTarefas.CarregarProjetos;
 var
-  Lista: TArray<TProjeto>;
+  Lista: TArrayProjeto;
   P: TProjeto;
 begin
   CmbProjeto.Clear;
@@ -133,7 +133,7 @@ end;
 
 procedure TFormTarefas.CarregarSprints;
 var
-  Lista: TArray<TSprint>;
+  Lista: TArraySprint;
   S: TSprint;
   ProjetoId: Integer;
 begin
@@ -155,7 +155,7 @@ end;
 
 procedure TFormTarefas.CarregarMembros;
 var
-  Lista: TArray<TMembro>;
+  Lista: TArrayMembro;
   M: TMembro;
 begin
   CmbMembro.Clear;
@@ -167,7 +167,7 @@ end;
 
 procedure TFormTarefas.CarregarKanban;
 var
-  Lista: TArray<TTarefa>;
+  Lista: TArrayTarefa;
   T: TTarefa;
 begin
   LbBacklog.Clear;

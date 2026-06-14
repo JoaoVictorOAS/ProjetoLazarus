@@ -98,7 +98,7 @@ end;
 
 procedure TFormProjetos.CarregarGrid;
 var
-  Lista: TArray<TProjeto>;
+  Lista: TArrayProjeto;
   I: Integer;
 begin
   Lista := TProjetos.Listar;
@@ -128,8 +128,8 @@ end;
 
 procedure TFormProjetos.CarregarMembros(AProjetoId: Integer);
 var
-  TodosMembros: TArray<TMembro>;
-  NoProjeto: TArray<Integer>;
+  TodosMembros: TArrayMembro;
+  NoProjeto: TArrayInteger;
   M: TMembro;
   Id: Integer;
   EstaNoProj: Boolean;

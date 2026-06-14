@@ -129,7 +129,7 @@ end;
 
 procedure TFormHorasTecnicas.CarregarMembros;
 var
-  Lista: TArray<TMembro>;
+  Lista: TArrayMembro;
   M: TMembro;
 begin
   CmbMembro.Clear;
@@ -142,7 +142,7 @@ end;
 
 procedure TFormHorasTecnicas.CarregarTarefas;
 var
-  Lista: TArray<TTarefa>;
+  Lista: TArrayTarefa;
   T: TTarefa;
 begin
   CmbTarefa.Clear;
@@ -157,7 +157,7 @@ end;
 
 procedure TFormHorasTecnicas.CarregarLog;
 var
-  Lista: TArray<THoraTecnica>;
+  Lista: TArrayHoraTecnica;
   I: Integer;
   TarefaId: Integer;
 begin
@@ -181,7 +181,7 @@ end;
 
 procedure TFormHorasTecnicas.CarregarResumo;
 var
-  Lista: TArray<TResumoHoras>;
+  Lista: TArrayResumoHoras;
   I: Integer;
   TarefaId: Integer;
 begin

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"/c/Program Files/PostgreSQL/18/bin/libpq.dll\" \"C:/Users/Joao Victor/Documents/LazarusGestao/\")",
+      "Bash(cp \"/c/Program Files/PostgreSQL/18/bin/libssl-3-x64.dll\" \"C:/Users/Joao Victor/Documents/LazarusGestao/\")",
+      "Bash(cp \"/c/Program Files/PostgreSQL/18/bin/libcrypto-3-x64.dll\" \"C:/Users/Joao Victor/Documents/LazarusGestao/\")",
+      "Bash(python3 *)",
+      "Bash(where psql *)",
+      "Read(//c/Program Files/PostgreSQL/**)",
+      "Bash(\"C:/Program Files/PostgreSQL/18/bin/psql.exe\" -U postgres -c \"\\\\l\")",
+      "Bash(PGPASSWORD=root C:/Program Files/PostgreSQL/18/bin/psql.exe *)",
+      "PowerShell($env:Path -split ';' | Where-Object { $_ -match 'postgres|lazarus' -or $_ -match 'LazarusGestao' })",
+      "Bash(xargs ls *)",
+      "Bash(xargs grep *)",
+      "PowerShell(& \"C:\\\\Windows\\\\System32\\\\dllhost.exe\" 2>&1; Get-Item \"C:\\\\lazarus\\\\libpq.dll\" | Select-Object Name, Length, LastWriteTime; Get-Item \".\\\\libpq.dll\" | Select-Object Name, Length, LastWriteTime; Get-Item \"C:\\\\Program Files\\\\PostgreSQL\\\\18\\\\bin\\\\libpq.dll\" | Select-Object Name, Length, LastWriteTime)"
+    ]
+  }
+}

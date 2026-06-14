@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="AgileLazarus.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="9"/>
+        <CursorPos X="28" Y="26"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="utils\UDBConnection.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="modules\UMembros.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="9"/>
+        <CursorPos X="65" Y="21"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="modules\UProjetos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="21"/>
+      </Unit>
+      <Unit>
+        <Filename Value="modules\USprints.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="21"/>
+      </Unit>
+      <Unit>
+        <Filename Value="modules\UTarefas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="95"/>
+        <CursorPos X="20" Y="106"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="modules\UHorasTecnicas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="21"/>
+      </Unit>
+      <Unit>
+        <Filename Value="modules\UMetricas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="21"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\FMain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormMain"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="21"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\FMembros.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormMembros"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="21"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\FProjetos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormProjetos"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="21"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\FSprints.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormSprints"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="148"/>
+        <CursorPos X="14" Y="160"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\FTarefas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormTarefas"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="21"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\FHorasTecnicas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormHorasTecnicas"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="21"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\FMetricas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormMetricas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="19" Y="10"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\FMetricas.lfm"/>
+        <EditorIndex Value="5"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="11">
+      <Position>
+        <Filename Value="utils\UDBConnection.pas"/>
+      </Position>
+      <Position>
+        <Filename Value="modules\UMembros.pas"/>
+        <Caret Line="21" Column="65" TopLine="9"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\FSprints.pas"/>
+        <Caret Line="141" Column="37" TopLine="128"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\FSprints.pas"/>
+        <Caret Line="160" Column="14" TopLine="148"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\FSprints.pas"/>
+        <Caret Line="166" Column="38" TopLine="148"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\FSprints.pas"/>
+        <Caret Line="160" Column="14" TopLine="148"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\FMetricas.pas"/>
+        <Caret Line="10" Column="3"/>
+      </Position>
+      <Position>
+        <Filename Value="modules\UTarefas.pas"/>
+        <Caret Line="106" Column="20" TopLine="95"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\FMetricas.lfm"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\FMetricas.pas"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\FMetricas.pas"/>
+        <Caret Line="23" Column="13"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\FMetricas.pas"/>
+        <Caret Line="10" Column="19"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

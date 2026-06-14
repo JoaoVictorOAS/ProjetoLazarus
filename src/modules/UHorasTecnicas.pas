@@ -39,9 +39,12 @@ type
     class function FromPG(const S: string): TDateTime;
   end;
 
+  TArrayHoraTecnica = array of THoraTecnica;
+  TArrayResumoHoras = array of TResumoHoras;
+
   THorasTecnicas = class
   public
-    class function  Listar(ATarefaId: Integer): TArray<THoraTecnica>;
+    class function  Listar(ATarefaId: Integer): TArrayHoraTecnica;
     class function  BuscarPorId(AId: Integer): THoraTecnica;
     class function  Inserir(const AH: THoraTecnica): Integer;
     class procedure Atualizar(const AH: THoraTecnica);
@@ -51,8 +54,8 @@ type
     class procedure PararTimer(ARegistroId: Integer);
     class function  TimerAtivo(AMembroId: Integer): TTimerStatus;
 
-    class function  ResumoPorTarefa(ATarefaId: Integer): TArray<TResumoHoras>;
-    class function  TotalPorSprint(ASprintId: Integer): TArray<TResumoHoras>;
+    class function  ResumoPorTarefa(ATarefaId: Integer): TArrayResumoHoras;
+    class function  TotalPorSprint(ASprintId: Integer): TArrayResumoHoras;
     class function  TotalMembroPorSprint(AMembroId, ASprintId: Integer): Integer;
 
     class function  TiposValidos: TStringArray;
@@ -94,12 +97,13 @@ begin
   Result := Format('%dh %02dm', [H, M]);
 end;
 
-class function THorasTecnicas.Listar(ATarefaId: Integer): TArray<THoraTecnica>;
+class function THorasTecnicas.Listar(ATarefaId: Integer): TArrayHoraTecnica;
 var
   Q: TSQLQuery;
-  Lista: TArray<THoraTecnica>;
+  Lista: TArrayHoraTecnica;
   Idx: Integer;
 begin
+  Lista := nil;
   Q := TDBConnection.NewQuery;
   try
     Q.SQL.Text :=
@@ -297,12 +301,13 @@ begin
   end;
 end;
 
-class function THorasTecnicas.ResumoPorTarefa(ATarefaId: Integer): TArray<TResumoHoras>;
+class function THorasTecnicas.ResumoPorTarefa(ATarefaId: Integer): TArrayResumoHoras;
 var
   Q: TSQLQuery;
-  Lista: TArray<TResumoHoras>;
+  Lista: TArrayResumoHoras;
   Idx: Integer;
 begin
+  Lista := nil;
   Q := TDBConnection.NewQuery;
   try
     Q.SQL.Text :=
@@ -331,12 +336,13 @@ begin
   end;
 end;
 
-class function THorasTecnicas.TotalPorSprint(ASprintId: Integer): TArray<TResumoHoras>;
+class function THorasTecnicas.TotalPorSprint(ASprintId: Integer): TArrayResumoHoras;
 var
   Q: TSQLQuery;
-  Lista: TArray<TResumoHoras>;
+  Lista: TArrayResumoHoras;
   Idx: Integer;
 begin
+  Lista := nil;
   Q := TDBConnection.NewQuery;
   try
     Q.SQL.Text :=
